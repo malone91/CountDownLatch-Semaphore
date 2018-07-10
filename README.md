@@ -46,7 +46,7 @@ public class ConcurrentThreadTimeWent {
                             endGate.countDown();
                         }
                     } catch (InterruptedException e) {
-                        //不仅仅是要抛出异常，还要进行处理，保存中断的证据
+                        //不仅仅是要抛出异常，还要进行处理，保存中断的证据，重新设置线程的中断状态。
                         Thread.currentThread().interrupt();
                     }
                 }
